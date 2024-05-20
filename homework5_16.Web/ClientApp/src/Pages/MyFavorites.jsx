@@ -23,7 +23,7 @@ const MyFavorites = () => {
             <div className="container mt-5">
                 <h2 className="mb-4 text-primary">My Favorites</h2>
                 <div className="row">
-                    {favs.map(f => <FavBook book={f} key={f.id} getFavs={getFavs()} />)}
+                    {favs.map(f => <FavBook book={f} key={f.id} getFavs={getFavs} />)}
                     
                 </div>
             </div>

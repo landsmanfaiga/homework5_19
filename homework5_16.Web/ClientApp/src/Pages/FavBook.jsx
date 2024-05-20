@@ -8,7 +8,7 @@ const FavBook = ({ book, getFavs }) => {
    
     const onClick = async (book) => {
         await axios.post('/api/favbook/deletefav', book)
-        getFavs;
+        getFavs();
     }
 
     const addNote = async (book) => {
