@@ -23,7 +23,8 @@ namespace homework5_16.Data
         public void RemoveBook(FavoriteBook book)
         {
             var context = new BookDataContext(_connectionString);
-            context.FavoriteBooks.Remove(book);
+            var b = context.FavoriteBooks.FirstOrDefault(x => x.Key == book.Key);
+            context.FavoriteBooks.Remove(b);
             context.SaveChanges();
         }
 

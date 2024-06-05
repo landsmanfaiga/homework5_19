@@ -21,7 +21,10 @@ const FavBook = ({ book, getFavs }) => {
         setIsEdit(true);
         setNote(book.notes);
     }
-
+    const onCancelClick = () => {
+        setIsAdd(false);
+        setNote('');
+    }
    
 
     return (
@@ -45,14 +48,14 @@ const FavBook = ({ book, getFavs }) => {
                                 <textarea className="form-control" rows="3" placeholder="Add your notes here..." value={note} onChange={e => setNote(e.target.value)}>
                                 </textarea><div className="d-flex justify-content-between mt-2">
                                     <button className="btn btn-success" onClick={() => addNote(book)}>Save Note</button>
-                                    <button className="btn btn-outline-secondary ms-2" onClick={() => setIsAdd(false)}>Cancel</button>
+                                    <button className="btn btn-outline-secondary ms-2" onClick={onCancelClick}>Cancel</button>
                                 </div>
                             </div>
                         }
                         {book.notes && <>
                             <div className="mt-auto">
                                 <button className="btn btn-outline-primary w-100 mb-2" onClick={onClick2}>Edit Note</button>
-                                <button className="btn btn-outline-dark w-100" onClick={onClick2}>Show Note</button></div>
+                                </div>
                         </>
                         }
                         {isEdit && <>
